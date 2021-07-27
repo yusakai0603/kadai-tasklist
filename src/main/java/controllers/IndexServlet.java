@@ -26,8 +26,8 @@ public class IndexServlet extends HttpServlet {
             throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
-        List<Tasks> messages = em.createNamedQuery("getAllMessages", Tasks.class).getResultList();
-        response.getWriter().append(Integer.valueOf(messages.size()).toString());
+        List<Tasks> tasks = em.createNamedQuery("getAllTasks", Tasks.class).getResultList();
+        response.getWriter().append(Integer.valueOf(tasks.size()).toString());
 
         em.close();
     }
